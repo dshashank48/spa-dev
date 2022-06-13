@@ -7,6 +7,7 @@ import {
 } from "react-location";
 import { usePresentationHome } from "../api/queries";
 import useKeyPress from "../hooks/useKeyPress";
+import ScreenShot from "./ScreenShot";
 
 export const PresentationHeaderloading = () => {
    return (
@@ -134,9 +135,12 @@ const PresentationHeader = () => {
                </button>
             )}
 
-            <button onClick={onNext}>
-               Next: {playlist[currentSlideIndex + 1]?.type}
-            </button>
+            {!isStart && (
+               <ScreenShot
+                  playlist={playlist}
+                  currentSlideIndex={currentSlideIndex}
+               />
+            )}
 
             {!isEnd ? (
                <button onClick={onNext}>

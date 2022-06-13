@@ -3,7 +3,6 @@ import React from "react";
 import { ReactComponent as DollarIcon } from "../assets/icons/dollar.svg";
 import Card from "../components/Card";
 import { formatMoney } from "../utils";
-import html2canvas from "html2canvas";
 
 const AssetsAndLiabilitiesPage = ({ data }) => {
    const { assets, liabilities, netAsset, assetBreakdown } =
@@ -13,26 +12,8 @@ const AssetsAndLiabilitiesPage = ({ data }) => {
    const lifestylePercentage = (assetBreakdown.lifestyle / totalAsset) * 100;
    const investmentPercentage = (assetBreakdown.investment / totalAsset) * 100;
 
-   const capture = () => {
-      html2canvas(document.querySelector("#AssetsAndLiabilitiesPage")).then(
-         (canvas) => {
-            // document.body.appendChild(canvas);
-            const image = canvas
-               .toDataURL("image/png", 1.0)
-               .replace("image/png", "image/octet-stream");
-            var link = document.createElement("a");
-            link.download = "my-image.png";
-            link.href = image;
-            link.click();
-         }
-      );
-   };
-
    return (
-      <div
-         className="grid h-full grid-cols-2 gap-4"
-         id="AssetsAndLiabilitiesPage"
-      >
+      <div className="grid h-full grid-cols-2 gap-4" id="assetsAndLiabilities">
          <Card
             section="assets"
             title="Assets"
@@ -232,12 +213,6 @@ const AssetsAndLiabilitiesPage = ({ data }) => {
                </p>
             </div>
          </Card>
-         <button
-            className="bottom-1 cursor-pointer border hover:bg-gray-200"
-            onClick={capture}
-         >
-            Take Screenshot
-         </button>
       </div>
    );
 };
