@@ -1,0 +1,118 @@
+{
+  "title": "Investment switch analysis",
+  "type": "object",
+  "properties": {
+    "table": {
+      "title": "Table",
+      "type": "object",
+      "required": ["display", "fundBalance", "difference"],
+      "properties": {
+        "display": {
+          "title": "Display",
+          "type": "string"
+        },
+        "fundBalance": {
+          "title": "Fund balance",
+          "type": "object",
+          "required": ["exisiting", "proposed"],
+          "properties": {
+            "exisiting": {
+              "title": "Exisiting",
+              "type": "string"
+            },
+            "proposed": {
+              "title": "Proposed",
+              "type": "string"
+            }
+          }
+        },
+        "initial": {
+          "title": "Initial",
+          "type": "object",
+          "properties": {
+            "fees": {
+              "title": "Fees",
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "display": {
+                    "title": "Display",
+                    "type": "string"
+                  },
+                  "existing": {
+                    "title": "Existing",
+                    "type": "string"
+                  },
+                  "proposed": {
+                    "title": "Proposed",
+                    "type": "string"
+                  }
+                },
+                "required": ["id", "display", "existing", "proposed"]
+              }
+            }
+          }
+        },
+        "ongoing": {
+          "title": "Ongoing",
+          "type": "object",
+          "required": ["totalExisting", "totalProposed"],
+          "properties": {
+            "fees": {
+              "title": "Fees",
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "title": "Id",
+                    "type": "string"
+                  },
+                  "display": {
+                    "title": "Display",
+                    "type": "string"
+                  },
+                  "existing": {
+                    "title": "Existing",
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "proposed": {
+                    "title": "Proposed",
+                    "type": "string"
+                  }
+                },
+                "required": ["id", "display", "existing", "proposed"]
+              }
+            },
+            "totalExisting": {
+              "title": "Total existing",
+              "type": "string"
+            },
+            "totalProposed": {
+              "title": "Total proposed",
+              "type": "string"
+            }
+          }
+        },
+        "difference": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": ["table"]
+}

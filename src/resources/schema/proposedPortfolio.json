@@ -1,0 +1,61 @@
+{
+  "title": "Proposed Portfolio",
+  "type": "object",
+  "properties": {
+    "portfolios": {
+      "title": "Portfolios",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "owner": {
+            "title": "Owner",
+            "type": "string"
+          },
+          "display": {
+            "title": "Display",
+            "type": "string"
+          },
+          "values": {
+            "title": "Values",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "type": "string"
+                },
+                "display": {
+                  "title": "Display",
+                  "type": "string"
+                },
+                "value": {
+                  "title": "Value",
+                  "type": "number"
+                },
+                "weight": {
+                  "title": "Weight",
+                  "type": "number"
+                }
+              },
+              "required": ["id", "display", "value", "weight"]
+            }
+          },
+          "totalValue": {
+            "title": "Total Value",
+            "type": "number"
+          },
+          "totalWeight": {
+            "title": "Total Weight",
+            "type": "number"
+          }
+        },
+        "required": ["owner", "display", "totalValue", "totalWeight"]
+      }
+    }
+  },
+  "required": ["portfolios"]
+}

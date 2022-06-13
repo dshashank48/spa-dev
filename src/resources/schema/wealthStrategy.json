@@ -1,0 +1,54 @@
+{
+  "title": "Wealth Strategy Recommendation",
+  "type": "object",
+  "properties": {
+    "strategy": {
+      "title": "Strategy",
+      "type": "string"
+    },
+    "strategyDescription": {
+      "title": "Strategy Description",
+      "type": "string"
+    },
+    "recommendations": {
+      "title": "Recommendations",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "preamble": {
+            "title": "Preamble",
+            "type": "string"
+          },
+          "points": {
+            "title": "Points",
+            "type": "array",
+            "items": {
+              "title": "Point",
+              "type": "string"
+            }
+          }
+        },
+        "required": ["preamble"]
+      }
+    },
+    "benefits": {
+      "title": "Benefits",
+      "type": "array",
+      "items": {
+        "title": "Benefit",
+        "type": "string"
+      }
+    },
+    "considerations": {
+      "title": "Considerations",
+      "type": "array",
+      "items": {
+        "title": "Consideration",
+        "type": "string"
+      }
+    }
+  },
+  "required": ["strategy", "strategyDescription"]
+}

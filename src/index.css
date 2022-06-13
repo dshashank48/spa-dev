@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply h-screen w-screen overflow-hidden bg-blueGray-50 text-blueGray-700;
+}
+
+.h-page {
+  height: calc(100vh - 1.75rem - 16px);
+}
+
+.w-page {
+  max-width: 1584px;
+  margin: 0 auto;
+}
+
+.animate-drag-active {
+  animation: drag-active 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes drag-active {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+}
+
+.spinner .path {
+  @apply stroke-current text-blue-900;
+  stroke: hsl(210, 70, 75);
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.box-wrap {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  width: 1000px;
+  height: 750px;
+}
+
+@media screen and (max-width: 1600px) {
+  .box {
+    width: 850px;
+    height: 640px;
+  }
+}
+
+.box.size-60 {
+  margin-top: -40px;
+  transform: scale(0.75);
+}
+
+.edit-page {
+  grid-template-columns: 220px auto 500px;
+}
+
+@media screen and (max-width: 1600px) {
+  .edit-page {
+    grid-template-columns: 220px auto 350px;
+  }
+}
+
+.thumb-wrap {
+  box-sizing: border-box;
+  width: 1000px;
+  height: 750px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.thumb-wrap .thumb {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  width: 1000px;
+  height: 750px;
+  transform-origin: top left;
+  overflow: hidden;
+  pointer-events: none;
+  transform: scale(0.14);
+  margin: calc((-750 * (1 - 0.14))) calc((-1000px * (1 - 0.12)));
+}
+
+.thumb-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 105px;
+  background: linear-gradient(45deg, #0000 0%, #0000 80%, #fff 100%);
+  z-index: 10;
+}
+
+.fab-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 100px;
+}
+
+.fab-container.animate .rtf {
+  transition: transform 0.2s ease-in-out;
+  transform: translateY(100px);
+}
+
+.fab-container.animate:hover .rtf {
+  transform: translateY(0px);
+}
+
+.create-new-slide-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Due to tailwind forms reset */
+.asset-allocation-chart .recharts-yAxis text {
+  font-size: 10px !important;
+}
+
+.asset-allocation-chart .recharts-xAxis .recharts-cartesian-axis-tick {
+  transform: translateX(-16px);
+}
+
+/* Quill */
+
+.quill {
+  border-radius: 0.28571429rem !important;
+}
+
+.quill .ql-toolbar {
+  border-top-left-radius: 0.28571429rem;
+  border-top-right-radius: 0.28571429rem;
+  border-color: rgba(34, 36, 38, 0.15);
+}
+
+.quill .ql-container {
+  border-bottom-left-radius: 0.28571429rem;
+  border-bottom-right-radius: 0.28571429rem;
+  min-height: 300px;
+  border-color: rgba(34, 36, 38, 0.15);
+}
+
+.ql-snow .ql-tooltip {
+  position: absolute;
+  left: 0 !important;
+}
+
+.ql-snow .ql-tooltip input {
+  width: initial !important;
+}
+
+/* Override Semantic UI */
+.ui.segment {
+  margin-bottom: 1rem !important;
+  box-shadow: none !important;
+}
+
+.ui.form textarea:focus,
+.ui.form input:focus {
+  @apply border-blue-500 transition-none !important;
+  box-shadow: none !important;
+}
+
+.ui.primary.button {
+  @apply bg-blue-600 !important;
+}
+
+.ui.primary.button:hover,
+.ui.primary.button:focus {
+  @apply bg-blue-700 !important;
+}

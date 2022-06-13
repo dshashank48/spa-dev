@@ -1,0 +1,150 @@
+{
+  "title": "Replacement of wealth products",
+  "type": "object",
+  "properties": {
+    "table": {
+      "title": "Table",
+      "type": "object",
+      "required": ["header", "default"],
+      "properties": {
+        "header": {
+          "title": "Header",
+          "type": "object",
+          "required": ["description", "columns"],
+          "properties": {
+            "description": {
+              "title": "Description",
+              "type": "string"
+            },
+            "columns": {
+              "title": "Columns",
+              "type": "array",
+              "items": {
+                "title": "Column",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "default": {
+          "title": "Default",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "title": "Description",
+                "type": "string"
+              },
+              "columns": {
+                "title": "Columns",
+                "type": "array",
+                "items": {
+                  "title": "Column",
+                  "type": "string"
+                }
+              }
+            },
+            "required": ["description"]
+          }
+        },
+        "initial": {
+          "title": "Initial",
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "title": "Description",
+                    "type": "string"
+                  },
+                  "columns": {
+                    "title": "Columns",
+                    "type": "array",
+                    "items": {
+                      "title": "Column",
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["description"]
+              }
+            },
+            "total": {
+              "title": "Total",
+              "type": "object",
+              "required": ["description", "columns"],
+              "properties": {
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                },
+                "columns": {
+                  "title": "Columns",
+                  "type": "array",
+                  "items": {
+                    "title": "Column",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ongoing": {
+          "title": "Ongoing",
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "title": "Description",
+                    "type": "string"
+                  },
+                  "columns": {
+                    "title": "Columns",
+                    "type": "array",
+                    "items": {
+                      "title": "Column",
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["description"]
+              }
+            },
+            "total": {
+              "title": "Total",
+              "type": "object",
+              "required": ["description", "columns"],
+              "properties": {
+                "description": {
+                  "title": "Description",
+                  "type": "string"
+                },
+                "columns": {
+                  "title": "Columns",
+                  "type": "array",
+                  "items": {
+                    "title": "Column",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["table"]
+}

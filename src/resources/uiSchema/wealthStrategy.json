@@ -1,0 +1,10 @@
+{
+  "strategyDescription": {
+    "ui:widget": "textarea",
+    "ui:options": {
+      "semantic": {
+        "rows": 6
+      }
+    }
+  }
+}

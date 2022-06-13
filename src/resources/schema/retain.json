@@ -1,0 +1,57 @@
+{
+  "title": "Product Costs - Retain",
+  "type": "object",
+  "properties": {
+    "portfolios": {
+      "title": "Portfolios",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "display": {
+            "title": "Display",
+            "type": "string"
+          },
+          "fees": {
+            "title": "Fees",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "type": "string"
+                },
+                "display": {
+                  "title": "Display",
+                  "type": "string"
+                },
+                "value": {
+                  "title": "Value",
+                  "type": "number"
+                },
+                "percentage": {
+                  "title": "Percentage",
+                  "type": "number"
+                }
+              },
+              "required": ["id", "display", "value", "percentage"]
+            }
+          },
+          "totalValue": {
+            "title": "Total Value",
+            "type": "number"
+          },
+          "totalPercentage": {
+            "title": "Total Percentage",
+            "type": "number"
+          }
+        },
+        "required": ["display", "totalValue", "totalPercentage"]
+      }
+    }
+  },
+  "required": ["portfolios"]
+}

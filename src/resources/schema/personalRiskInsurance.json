@@ -1,0 +1,61 @@
+{
+  "title": "Personal Risk Insurance",
+  "type": "object",
+  "properties": {
+    "riskInsurances": {
+      "title": "",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "title": "",
+        "type": "object",
+        "properties": {
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "premium": {
+            "title": "Premium",
+            "type": "number"
+          },
+          "owner": {
+            "title": "Owner",
+            "type": "string"
+          },
+          "premiumStructure": {
+            "title": "Premium Structure",
+            "type": "string",
+            "minLength": 1
+          },
+          "covers": {
+            "title": "Covers",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "title": "",
+              "type": "object",
+              "properties": {
+                "cover": {
+                  "title": "Cover",
+                  "type": "string"
+                },
+                "amount": {
+                  "title": "Amount",
+                  "type": "number"
+                },
+                "owner": {
+                  "title": "Owner",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

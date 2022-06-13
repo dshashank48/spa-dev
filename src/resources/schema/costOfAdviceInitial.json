@@ -1,0 +1,99 @@
+{
+  "title": "Cost Of Advice - (1/2)",
+  "type": "object",
+  "properties": {
+    "table": {
+      "title": "Table",
+      "type": "object",
+      "required": ["items", "total"],
+      "properties": {
+        "items": {
+          "title": "",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "title": "",
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "ID",
+                "type": "number"
+              },
+              "display": {
+                "title": "Display",
+                "type": "string"
+              },
+              "percentage": {
+                "title": "Percentage",
+                "type": "string"
+              },
+              "paidByYou": {
+                "title": "Paid By You",
+                "type": "string"
+              },
+              "paidByProduct": {
+                "title": "Paid By Product",
+                "type": "string"
+              },
+              "retainedByDealerGroup": {
+                "title": "Retained By Dealer Group",
+                "type": "string"
+              },
+              "retainedByCar": {
+                "title": "Retained By Car",
+                "type": "string"
+              }
+            },
+            "required": ["id", "display"]
+          }
+        },
+        "subTotal": {
+          "title": "Sub Total",
+          "type": "object",
+          "properties": {
+            "paidByYou": {
+              "title": "Paid By You",
+              "type": "string"
+            },
+            "paidByProduct": {
+              "title": "Paid By Product",
+              "type": "string"
+            },
+            "retainedByDealerGroup": {
+              "title": "Retained By Dealer Group",
+              "type": "string"
+            },
+            "retainedByCar": {
+              "title": "Retained By Car",
+              "type": "string"
+            }
+          }
+        },
+        "total": {
+          "title": "Total",
+
+          "type": "object",
+          "required": ["payable", "retained"],
+          "properties": {
+            "payable": {
+              "title": "Payable",
+              "type": "string"
+            },
+            "retained": {
+              "title": "Retained",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "notesMarkdown": {
+      "title": "Notes",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["table"]
+}

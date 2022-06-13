@@ -1,0 +1,38 @@
+{
+  "title": "Estate Planning",
+  "type": "object",
+  "properties": {
+    "options": {
+      "title": "Options",
+      "type": "object",
+      "properties": {
+        "items": {
+          "title": "",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "ID",
+                "type": "string"
+              },
+              "display": {
+                "title": "Display",
+                "type": "string"
+              },
+              "clientValue": {
+                "title": "Client Value",
+                "type": "string"
+              },
+              "partnerValue": {
+                "title": "Partner Value",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

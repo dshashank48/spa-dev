@@ -1,0 +1,151 @@
+{
+  "title": "Proposed Asset Allocation",
+  "type": "object",
+  "properties": {
+    "display": {
+      "title": "Display",
+      "type": "string"
+    },
+    "table": {
+      "title": "Table",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "number"
+          },
+          "display": {
+            "title": "Display",
+            "type": "string"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "ID",
+                  "type": "number"
+                },
+                "display": {
+                  "title": "Display",
+                  "type": "string"
+                },
+                "min": {
+                  "title": "Min",
+                  "type": "number"
+                },
+                "max": {
+                  "title": "Max",
+                  "type": "number"
+                },
+                "current": {
+                  "title": "Current",
+                  "type": "number"
+                },
+                "target": {
+                  "title": "Target",
+                  "type": "number"
+                },
+                "proposed": {
+                  "title": "Proposed",
+                  "type": "number"
+                }
+              },
+              "required": ["id", "display"]
+            }
+          },
+          "totalGrowth": {
+            "type": "object",
+            "title": "Total Growth",
+            "properties": {
+              "current": {
+                "title": "Current",
+                "type": "number"
+              },
+              "target": {
+                "title": "Target",
+                "type": "number"
+              },
+              "proposed": {
+                "title": "Proposed",
+                "type": "number"
+              }
+            }
+          },
+          "totalDefensive": {
+            "type": "object",
+            "title": "Total Defensive",
+            "properties": {
+              "current": {
+                "title": "Current",
+                "type": "number"
+              },
+              "target": {
+                "title": "Target",
+                "type": "number"
+              },
+              "proposed": {
+                "title": "Proposed",
+                "type": "number"
+              }
+            }
+          },
+          "total": {
+            "type": "object",
+            "title": "Total",
+            "properties": {
+              "current": {
+                "title": "Current",
+                "type": "number"
+              },
+              "target": {
+                "title": "Target",
+                "type": "number"
+              },
+              "proposed": {
+                "title": "Proposed",
+                "type": "number"
+              }
+            }
+          }
+        },
+        "required": ["id", "display"]
+      }
+    },
+    "chart": {
+      "type": "array",
+      "uniqueItems": true,
+      "title": "Chart",
+      "items": {
+        "title": "Items",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "number"
+          },
+          "display": {
+            "title": "Display",
+            "type": "string"
+          },
+          "proposedValue": {
+            "title": "Proposed Value",
+            "type": "number"
+          },
+          "profileValue": {
+            "title": "Profile Value",
+            "type": "number"
+          }
+        },
+        "required": ["id", "display"]
+      }
+    }
+  },
+  "required": ["display"]
+}

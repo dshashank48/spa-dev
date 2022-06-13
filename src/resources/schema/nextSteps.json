@@ -1,0 +1,43 @@
+{
+  "title": "Next steps",
+  "type": "object",
+  "properties": {
+    "table": {
+      "title": "",
+      "type": "object",
+      "properties": {
+        "items": {
+          "title": "",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "title": "Items",
+            "type": "object",
+            "properties": {
+              "text": {
+                "title": "Text",
+                "type": "string"
+              },
+              "bullets": {
+                "title": "Bullets",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "subBullets": {
+                "title": "Sub Bullets",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": ["text"]
+          }
+        }
+      }
+    }
+  },
+  "required": ["table"]
+}

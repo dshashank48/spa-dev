@@ -1,0 +1,98 @@
+{
+  "title": "Recommended Investment",
+  "type": "object",
+  "properties": {
+    "buy": {
+      "title": "Buy",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "owner": {
+            "title": "Owner",
+            "type": "string"
+          },
+          "display": {
+            "title": "Display",
+            "type": "string"
+          },
+          "values": {
+            "title": "Values",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "type": "integer"
+                },
+                "display": {
+                  "title": "Display",
+                  "type": "string"
+                },
+                "value": {
+                  "title": "Value",
+                  "type": "number"
+                }
+              },
+              "required": ["id", "display", "value"]
+            }
+          },
+          "total": {
+            "title": "Total",
+            "type": "number"
+          }
+        },
+        "required": ["owner", "display", "total"]
+      }
+    },
+    "sell": {
+      "title": "Sell",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "owner": {
+            "title": "Owner",
+            "type": "string"
+          },
+          "display": {
+            "title": "Display",
+            "type": "string"
+          },
+          "values": {
+            "title": "Values",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "type": "integer"
+                },
+                "display": {
+                  "title": "Display",
+                  "type": "string"
+                },
+                "value": {
+                  "title": "Value",
+                  "type": "number"
+                }
+              },
+              "required": ["id", "display", "value"]
+            }
+          },
+          "total": {
+            "title": "Total",
+            "type": "number"
+          }
+        },
+        "required": ["owner", "display", "total"]
+      }
+    }
+  }
+}

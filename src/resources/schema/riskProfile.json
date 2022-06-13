@@ -1,0 +1,45 @@
+{
+  "title": "Risk Profile",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string",
+      "minLength": 1
+    },
+    "detailMarkdown": {
+      "title": "Detail",
+      "type": "string",
+      "minLength": 1
+    },
+    "characteristicsMarkdown": {
+      "title": "Characteristics",
+      "type": "array",
+      "items": {
+        "title": "Characteristic",
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "breakdown": {
+      "title": "Breakdown",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "display": {
+            "title": "Display",
+            "type": "string"
+          },
+          "percentage": {
+            "title": "Percentage",
+            "type": "number"
+          }
+        },
+        "required": ["display", "percentage"]
+      }
+    }
+  },
+  "required": ["name", "breakdown"]
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Calm PV",
+  "type": "object",
+  "properties": {
+    "chart": {
+      "type": "array",
+      "uniqueItems": true,
+      "title": "Chart",
+      "items": {
+        "title": "Items",
+        "type": "object",
+        "properties": {
+          "age": {
+            "title": "Age",
+            "type": "number"
+          },
+          "netAssets": {
+            "title": "Net Assets",
+            "type": "number"
+          },
+          "expenditure": {
+            "title": "Expenditure",
+            "type": "number"
+          },
+          "income": {
+            "title": "Income",
+            "type": "number"
+          }
+        },
+        "required": ["age", "netAssets", "expenditure", "income"]
+      }
+    }
+  }
+}

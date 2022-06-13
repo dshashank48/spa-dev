@@ -1,0 +1,114 @@
+{
+  "title": "Assets & Liabilities",
+  "type": "object",
+  "properties": {
+    "assets": {
+      "title": "Assets",
+      "type": "object",
+      "properties": {
+        "total": {
+          "title": "Total",
+          "type": "number"
+        },
+        "totalClient": {
+          "title": "Total Client",
+          "type": "number"
+        },
+        "totalPartner": {
+          "title": "Total Partner",
+          "type": "number"
+        },
+        "totalJoint": {
+          "title": "Total Joint",
+          "type": "number"
+        },
+        "breakdown": {
+          "title": "Breakdown",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "ID",
+                "type": "string"
+              },
+              "display": {
+                "title": "Display",
+                "type": "string"
+              },
+              "value": {
+                "title": "Value",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "liabilities": {
+      "title": "Liabilities",
+      "type": "object",
+      "properties": {
+        "total": {
+          "title": "Total",
+          "type": "number"
+        },
+        "totalClient": {
+          "title": "Total Client",
+          "type": "number"
+        },
+        "totalJoint": {
+          "title": "Total Joint",
+          "type": "number"
+        },
+        "breakdown": {
+          "title": "Breakdown",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "ID",
+                "type": "string"
+              },
+              "display": {
+                "title": "Display",
+                "type": "string"
+              },
+              "value": {
+                "title": "Value",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "netAsset": {
+      "title": "Net Asset",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      }
+    },
+    "assetBreakdown": {
+      "title": "Asset Breakdown",
+      "type": "object",
+      "properties": {
+        "lifestyle": {
+          "title": "Lifestyle",
+          "type": "number"
+        },
+        "investment": {
+          "title": "Investment",
+          "type": "number"
+        }
+      }
+    }
+  }
+}

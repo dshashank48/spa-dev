@@ -1,0 +1,17 @@
+{
+  "goals": {
+    "items": {
+      "id": {
+        "ui:widget": "updown"
+      },
+      "displayMarkdown": {
+        "ui:widget": "textarea",
+        "ui:options": {
+          "semantic": {
+            "rows": 5
+          }
+        }
+      }
+    }
+  }
+}

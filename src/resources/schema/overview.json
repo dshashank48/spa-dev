@@ -1,0 +1,147 @@
+{
+  "title": "Overview",
+  "type": "object",
+  "properties": {
+    "basicDetails": {
+      "title": "Basic Details",
+      "type": "object",
+      "properties": {
+        "client": {
+          "title": "Client",
+          "type": "object",
+          "properties": {
+            "dob": {
+              "title": "Date of Birth",
+              "type": "string"
+            },
+            "marraige": {
+              "title": "Marraige",
+              "type": "string"
+            },
+            "employment": {
+              "title": "Employment",
+              "type": "string"
+            },
+            "jobTitle": {
+              "title": "Job Title",
+              "type": "string"
+            }
+          }
+        },
+        "partner": {
+          "title": "Partner",
+          "type": "object",
+          "properties": {
+            "dob": {
+              "title": "Date of Birth",
+              "type": "string"
+            },
+            "marraige": {
+              "title": "Marraige",
+              "type": "string"
+            },
+            "employment": {
+              "title": "Employment",
+              "type": "string"
+            },
+            "jobTitle": {
+              "title": "Job Title",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "netCashflow": {
+      "title": "Net Cashflow",
+      "type": "object",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      }
+    },
+    "income": {
+      "title": "Income",
+      "type": "object",
+      "properties": {
+        "total": {
+          "title": "Total",
+          "type": "number"
+        },
+        "totalClient": {
+          "title": "Total Client",
+          "type": "number"
+        },
+        "totalPartner": {
+          "title": "Total Partner",
+          "type": "number"
+        },
+        "breakdown": {
+          "title": "Breakdown",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "ID",
+                "type": "string"
+              },
+              "display": {
+                "title": "Display",
+                "type": "string"
+              },
+              "value": {
+                "title": "Value",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "expenses": {
+      "title": "Expenses",
+      "type": "object",
+      "properties": {
+        "total": {
+          "title": "Total",
+          "type": "number"
+        },
+        "totalClient": {
+          "title": "Total Client",
+          "type": "number"
+        },
+        "totalPartner": {
+          "title": "Total Partner",
+          "type": "number"
+        },
+        "breakdown": {
+          "title": "Breakdown",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "ID",
+                "type": "string"
+              },
+              "display": {
+                "title": "Display",
+                "type": "string"
+              },
+              "value": {
+                "title": "Value",
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["basicDetails"]
+}

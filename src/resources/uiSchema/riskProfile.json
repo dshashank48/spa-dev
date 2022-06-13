@@ -1,0 +1,20 @@
+{
+  "detailMarkdown": {
+    "ui:widget": "textarea",
+    "ui:options": {
+      "semantic": {
+        "rows": 6
+      }
+    }
+  },
+  "characteristicsMarkdown": {
+    "items": {
+      "ui:widget": "textarea",
+      "ui:options": {
+        "semantic": {
+          "rows": 4
+        }
+      }
+    }
+  }
+}

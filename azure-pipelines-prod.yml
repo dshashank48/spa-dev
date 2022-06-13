@@ -1,0 +1,81 @@
+resources:
+  # Refer Templates Repository
+  repositories:
+    - repository: templates
+      type: github
+      name: planpod/pp-devops-templates
+      endpoint: 'Planpod Production'
+
+trigger:
+  branches:
+    include:
+    - develop
+  paths:
+    exclude:
+    - azure-pipelines-prod.yml
+
+# Global Pipeline Variables
+variables:
+- group: 'global-vars'
+- name: 'artefactName'
+  value: 'pp-digital-presentation-spa-dev'
+- name: 'tfStorageContainer'
+  value: 'pp-digital-presentation-spa'
+
+stages:
+  # Build Stage
+  - stage: build
+    displayName: Build Stage
+    pool:
+      vmImage: 'ubuntu-latest'
+    jobs:
+    - job: build_spa
+      displayName: Build & Publish SPA
+      steps:
+      - template: src/build/node-spa.yml@templates
+        parameters:
+          nodeVer: '15.x'
+          envFile: .env
+          artefactName: '$(artefactName)'
+    - job: build_tf
+      displayName: Build & Publish IAC Artefact
+      steps:
+      - template: src/build/terraform.yml@templates
+        parameters:
+          artefactName: '$(artefactName)'
+          moduleBranch: 'develop'
+  # Deploy Stage
+  - stage: deploy
+    displayName: Deploy Stage
+    condition: and(succeeded(), not(eq( variables['Build.Reason'], 'PullRequest')))
+    pool:
+      vmImage: 'windows-latest'
+    dependsOn:
+      - build
+    variables:
+      - group: terraform-development
+    jobs:
+      - deployment: deploy_iac
+        displayName: 'Deploy Infrastructure'
+        environment: 'Development Environment'
+        strategy: 
+          runOnce:
+            deploy:
+              steps:
+                - template: src/deploy/terraform.yml@templates
+                  parameters:
+                    varFile: dev
+                    artefactName: '$(artefactName)'
+      - deployment: deploy_code
+        displayName: 'Deploy SPA'
+        environment: 'Development Environment'
+        dependsOn:
+        - deploy_iac
+        strategy: 
+          runOnce:
+            deploy:
+              steps:
+                - template: src/deploy/node-app.yml@templates
+                  parameters:
+                    artefactName: '$(artefactName)'
+                    appName: 'pp-app-digital-ppt-dev-aueast'
