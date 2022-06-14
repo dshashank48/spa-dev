@@ -100,7 +100,7 @@ const PresentationHeader = () => {
       });
    };
 
-   console.log("log: playlist", playlist);
+   // console.log("log: playlist", playlist);
 
    const disablyKeyPress = mode === "edit";
 
@@ -139,6 +139,7 @@ const PresentationHeader = () => {
                <ScreenShot
                   playlist={playlist}
                   currentSlideIndex={currentSlideIndex}
+                  isEnd={isEnd}
                />
             )}
 
